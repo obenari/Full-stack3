@@ -27,5 +27,4 @@ function poppin(ev){
     document.body.appendChild(clon);
 
 }
-
 window.addEventListener('popstate', poppin);
