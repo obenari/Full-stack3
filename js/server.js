@@ -6,7 +6,7 @@ class server {
         let requestSplit = requestHTTP.split('\r\n\r\n');
         let header = requestSplit[0];
         let body = requestSplit[1];
-        HeaderSplit = header.split(' ');
+        let HeaderSplit = header.split(' ');
         let method = HeaderSplit[0];
         switch (method) {
             case 'GET':
@@ -16,8 +16,8 @@ class server {
                  */
 
                 if (Url.startsWith('/getUser/')) {
-                    urlSplit = Url.split('/');
-                    return this.GET(urlSplit[2]);
+                    let urlSplit = Url.split('/');
+                    return this.GET(urlSplit[2].replace('.json',''));
 
                 }
                 else {
@@ -30,7 +30,7 @@ class server {
                 return this.PUT(body);
             case 'DELETE':
                 let Url1 = HeaderSplit[1];
-                urlSplit = Url1.split('/');
+                let urlSplit = Url1.split('/');
                 return this.DELETE(urlSplit[2]);
             default:
                 return "Http1.1 404 Not Found\r\n\r\n";
@@ -44,7 +44,7 @@ class server {
     POST(userJson) {
         let curentItem = JSON.parse(userJson);
 
-        succ = db.AddUser(curentItem.email, userJson)
+        let succ = db.AddUser(curentItem.email, userJson)
         if (succ)
             return "Http1.1 200 OK\r\n\r\n";
         return "Http1.1 406 Not Acceptable\r\n\r\n";
@@ -52,7 +52,7 @@ class server {
     GET(key) {
         let response = db.getUser(key);
         if (response) {
-            let responseHttp = "Http/1.1 200 OK\r\n\r\n" + JSON.stringify(response);
+            let responseHttp = "Http/1.1 200 OK\r\n\r\n" + response;
             return responseHttp;
         }
         else

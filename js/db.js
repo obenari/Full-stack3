@@ -1,10 +1,10 @@
 class db {
-    static AddUser(user, key) {
-        curentItem = window.localStorage.getItem(key);
+    static AddUser(key, user) {
+        let curentItem = window.localStorage.getItem(key);
         if (curentItem) {
             return false;
         }
-        window.localStorage.setItem(key, users);
+        window.localStorage.setItem(key, user);
         return true;
     }
     static getUser(key) {
@@ -12,9 +12,9 @@ class db {
 
     }
     static deleteUser(key) {
-        curentItem = window.localStorage.getItem(key);
+        let curentItem = window.localStorage.getItem(key);
         if (curentItem) {
-            window.localStorage.removeItem('users');
+            window.localStorage.removeItem(key);
             return true;
         }
         return false;
@@ -26,7 +26,7 @@ class db {
     }
 
     static GetAllUser() {
-        allUser = [];
+        let allUser = [];
         for (const key in localStorage) {
             if (key != "currentUser") {
                 allUser.push(window.localStorage.getItem(key));

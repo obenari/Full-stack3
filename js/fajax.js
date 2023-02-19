@@ -4,7 +4,7 @@ class FXMLHttpRequest {
         this.status = '';
         this.method = '';
         this.url = '';
-        this.network = new network();
+        this.network = new Network();
         this.callBack = '';
     }
 
@@ -14,10 +14,25 @@ class FXMLHttpRequest {
         this.url = url;
 
     }
+    /**
+   * 
+   * Http1.1 200 OK\r\n\r\n body.json
+  
+   */
+    sendToNetwork(re) {
+        let responseHttp = this.network.send(re);
+        let responseSplit = responseHttp.split('\r\n\r\n');
+        let header = responseSplit[0];
+        let body = responseSplit[1];
+        let HeaderSplit = header.split(' ');
+        this.status = HeaderSplit[1];
+        this.responseText = body;
+        this.callBack();
+    }
     /*method /URL HTTP/1.1 \r\n\r\nBody*/
     send(body = '') {
         let request = this.method + ' /' + this.url + '\r\n\r\n' + body;
-        setTimeout(sendToNetwork(request),0);
+        setTimeout(this.sendToNetwork(request), 0);
         let response = this.network.send(request);
         return response;
 
@@ -26,19 +41,5 @@ class FXMLHttpRequest {
     OnLoad(callBack) {
         this.callBack = callBack;
     }
-    /**
-     * 
-     * Http1.1 200 OK\r\n\r\n body.json
-    
-     */
-    sendToNetwork(re){
-        let response = this.network.send(re);
-        let requestSplit = requestHTTP.split('\r\n\r\n');
-        let header = requestSplit[0];
-        let body = requestSplit[1];
-        HeaderSplit = header.split(' ');
-        this.status = HeaderSplit[1];
-        this.responseText=body;
-        this.callBack();
-    }
+
 }
