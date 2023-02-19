@@ -29,8 +29,8 @@ class User {
     set lists(x) {
         this._lists = x;
     }
-    addList(list,name){
-        this.lists.push()
+    addList(list){
+        this.lists.push(list)
 
     }
 }

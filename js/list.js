@@ -9,6 +9,13 @@ class ShoppingList{
 
     }
     deleteProduct(name){
-        this.products.pop(this.products.)
+        let index= this.products.indexOf(x=>x.name===name);
+        this.products.splice(index,1);
     }
+    updateProduct(newProduct){
+        let index= this.products.indexOf(x=>x.name===newProduct.name);
+        this.products.splice(index,1,newProduct);
+
+    }
+
 }
