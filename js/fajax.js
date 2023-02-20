@@ -5,7 +5,7 @@ class FXMLHttpRequest {
         this.method = '';
         this.url = '';
         this.network = new Network();
-        this.callBack = '';
+        this.callBack = function(){};
     }
 
     Open(method, url) {

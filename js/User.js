@@ -5,6 +5,7 @@ class User {
         this.password=password;
         this.lists=lists;
     }
+
     // get email() {
     //     return this._email;
     // }

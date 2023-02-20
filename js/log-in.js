@@ -21,6 +21,7 @@ function validateUser(oldNode,newNode){
         document.cookie = `username=${userEmail};`;
         document.getElementById("wrong-input2").style.display='none';
         switchTemplate(oldNode,newNode);
+        loadListPage(user);
     }
     xhttp.OnLoad(loginValidation);
     xhttp.send();
@@ -43,8 +44,9 @@ function validateNewUser(oldNode,newNode){
         return false;
     }
     xhttp.Open('POST','addUser.json');
+    let user=new User(userEmail, userName,userPassword,[]);
     function loginValidation1(){
-        if(xhttp.status==406){
+        if(xhttp.status!=200){
             let wrongInputMsg=document.getElementById("wrong-input");
             wrongInputMsg.style.display='block';
             wrongInputMsg.style.color='red';
@@ -57,10 +59,9 @@ function validateNewUser(oldNode,newNode){
         let wrongInputMsg=document.getElementById("wrong-input");
         wrongInputMsg.style.display='none';
         switchTemplate(oldNode,newNode);
-
+        loadListPage(user);
     }
     xhttp.OnLoad(loginValidation1);
-    let user=new User(userEmail, userName,userPassword,[]);
     xhttp.send(JSON.stringify(user));
 
     return false;

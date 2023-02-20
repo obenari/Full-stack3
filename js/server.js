@@ -8,9 +8,9 @@ class server {
         let body = requestSplit[1];
         let HeaderSplit = header.split(' ');
         let method = HeaderSplit[0];
+        let Url = HeaderSplit[1];
         switch (method) {
             case 'GET':
-                let Url = HeaderSplit[1];
                 /**
                  * /getUser/key.json
                  */
@@ -25,8 +25,12 @@ class server {
                 }
 
             case 'POST':
+                if(Url!=='/addUser.json')
+                    return "Http1.1 404 Not Found\r\n\r\n";
                 return this.POST(body);
             case 'PUT':
+                if(Url!=='/updateUser.json')
+                    return "Http1.1 404 Not Found\r\n\r\n";
                 return this.PUT(body);
             case 'DELETE':
                 let Url1 = HeaderSplit[1];

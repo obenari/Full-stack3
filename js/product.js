@@ -1,4 +1,4 @@
-class product{
+class Product{
     constructor(name,count){
         this.name=name;
         this.status=1;

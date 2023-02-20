@@ -19,7 +19,8 @@
     <nav></nav>
     <main>
         <div class="all-shopping-lists">
-            <ul>
+            <button id="addListBtn" onclick="addNewList()">הוסף רשימה</button>
+            <ul id="list-name-bar">
                 <li>list1</li>
                 <li>list1</li>
                 <li>list1</li>
@@ -27,6 +28,7 @@
             </ul>
         </div>
     <div class="container">
+        <input type="text"  value="רשימה1" id="list-name" onfocusout="changeListName()">
         <div id="newtask">
             <input class="new-task-input" type="text" placeholder="הוסף מוצר">
             <input class="new-task-count" type="number" value="1" min="1">
@@ -39,11 +41,22 @@
             <span class="item-count">כמות </span>
             
         </div>
+        <div id="wrapper">
         <div id="tasks">
             
         </div>
     </div>
+    </div>
 </main>
     <script src="./js/client.js"></script>
+
+    <script src="./js/server.js"></script>
+    <script src="./js/db.js"></script>
+    <script src="./js/log-in.js"></script>
+    <script src="./js/fajax.js"></script>
+    <script src="./js/network.js"></script>
+    <script src="./js/User.js"></script>
+    <script src="./js/product.js"></script>
+    <script src="./js/ShoppingList.js"></script>
 </body>
 </html>
