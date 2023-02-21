@@ -1,7 +1,9 @@
 let currentList=new ShoppingList('list1');
-let curretUser;
+let curretUser=new User("heroot12@gmail.com","herout","12345",[]);
+
 window.onbeforeunload = function () {
     if (curretUser instanceof User) {
+        let xhttp= new FXMLHttpRequest();
         xhttp.Open('PUT', 'updateUser.json');
         xhttp.send(JSON.stringify(curretUser));
     }
@@ -76,12 +78,25 @@ function addNewList() {
     let newList = new ShoppingList();
     newList.name = new Date().toLocaleString();
     currentList = newList;
+    curretUser.addList(newList);
     document.getElementById('tasks').innerHTML = '';
     document.getElementById('list-name').value = newList.name;
     let li = document.createElement('li');
-    li.innerHTML = newList.name+`<i class="fa-solid fa-x"></i>`;
+    li.innerHTML = newList.name+`<i class="fa-solid fa-x" onclick="deleteList('${newList.name}')"></i>`;
     document.getElementById("list-name-bar").appendChild(li);
 
+}
+function deleteList(name){
+    curretUser.deleteList(name);
+   let nameList= document.getElementById('list-name-bar').querySelectorAll("li");
+   for(let i=0;i<nameList.length;i++ ){
+    if(nameList[i].textContent===name){
+        document.getElementById('list-name-bar').removeChild(nameList[i]);
+        
+    }
+   }
+   
+   
 }
 
 function changeListName() {

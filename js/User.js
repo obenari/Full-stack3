@@ -1,9 +1,9 @@
 class User {
-    constructor(email, name,password,lists) {
+    constructor(email, name, password, lists) {
         this.email = email
-        this.name=name;
-        this.password=password;
-        this.lists=lists;
+        this.name = name;
+        this.password = password;
+        this.lists = lists;
     }
 
     // get email() {
@@ -30,8 +30,18 @@ class User {
     // set lists(x) {
     //     this._lists = x;
     // }
-    addList(list){
+    addList(list) {
         this.lists.push(list)
 
     }
+    deleteList(name) {
+        let list = this.lists.filter(x => x.name === name)[0];
+        let index = this.lists.indexOf(list);
+        if (index > -1) { // only splice array when item is found
+            this.lists.splice(index, 1); // 2nd parameter means remove one item only
+
+
+        }
+    }
+
 }
