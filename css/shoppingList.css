@@ -79,11 +79,13 @@ body {
     cursor: pointer;
     outline: none;
 }
-#wrapper{
-    transform: scaleX(-1); 
+
+#wrapper {
+    transform: scaleX(-1);
     overflow: auto;
     max-height: 50vh;
 }
+
 #tasks {
     background-color: #ffffff;
     padding: 30px 20px;
@@ -93,7 +95,7 @@ body {
     position: relative;
     /* overflow: auto;
     max-height: 50vh; */
-    transform: scaleX(-1); 
+    transform: scaleX(-1);
 
 }
 
@@ -191,4 +193,31 @@ body {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 
+}
+
+.all-shopping-lists {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#list-name-bar{
+    list-style-type: none;
+    width: 100%;
+
+    overflow: auto;
+    max-height: 100vh;
+    transform: scaleX(-1);
+
+}
+#list-name-bar li {
+    text-decoration: none;
+    border-bottom:1px solid #111111;
+    padding: 10px;
+    transform: scaleX(-1);
+    text-align: center;
+
+}
+li i{
+    margin-right: 50%;
 }
