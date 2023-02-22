@@ -223,3 +223,13 @@ body {
 li i{
     margin-right: 1.5vw;
 }
+.hide{
+    display: none;
+}
+#addListIcon{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 40%;   
+    font-size: 3vw; 
+}
