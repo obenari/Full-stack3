@@ -5,6 +5,7 @@ body{
     /* margin-top: 60px; */
     margin: 0;
     background-color: #FAF0EF;
+    font-family: 'Varela Round', sans-serif;
 
 }
 .icon{
@@ -101,7 +102,7 @@ header {
     width: 100%;
     /* background-color: rgb(3, 69, 84);; */
     display: flex;
-    background-image: url('../images/bg-01.jpg');
+    background-image: url('../images/Back.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -1,5 +1,7 @@
 let currentList = new ShoppingList('list1');
 let currentUser = new User("heroot12@gmail.com", "herout", "12345", []);
+window.localStorage.clear();
+
 
 window.onbeforeunload = function () {
     if (currentUser instanceof User) {
@@ -7,6 +9,7 @@ window.onbeforeunload = function () {
         xhttp.Open('PUT', 'updateUser.json');
         xhttp.send(JSON.stringify(currentUser));
     }
+
 }
 
 
@@ -55,8 +58,11 @@ function onlyForDebug() {
     xhttp.Open('GET', `getUser/heroot12@gmail.com.json`);
     function loginValidation() {
         let userJson = xhttp.responseText;
-        let user = JSON.parse(userJson);
-        loadListPage(user);
+        if(userJson){
+            let user = JSON.parse(userJson);
+            loadListPage(user);
+        }
+        
     }
     xhttp.OnLoad(loginValidation);
     xhttp.send();
@@ -101,6 +107,9 @@ function addNewList() {
     let li = document.createElement('li');
     li.addEventListener("click", function () { selectList(newList.name); });
     li.innerHTML = newList.name + `<i class="fa-solid fa-x" onclick="deleteList('${newList.name}')"></i>`;
+    let a=document.querySelectorAll("list-name-bar");
+    
+    
     document.getElementById("list-name-bar").appendChild(li);
 
 }
@@ -141,6 +150,11 @@ function selectList(name) {
     document.querySelector('#tasks').innerHTML = '';//remove the previous products
     currentList = currentUser.lists.find(x => x.name === name);
     document.getElementById("list-name").value = name;
+    
+    let listNameBar = document.getElementById("list-name-bar");
+    
+
+    
     for (let p of currentList.products) {
         addProductToWindow(p.name, p.count);
     }

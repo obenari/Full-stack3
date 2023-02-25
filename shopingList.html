@@ -2,9 +2,13 @@
 <html lang="en" dir="rtl" >
 <head>
   
-  <!-- === Design by: foolishdeveloper.com ===--->
   
-    <title>Simple To Do List</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  
+    <title>Shopping List</title>
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <!--Font Awesome CDN-->
@@ -13,30 +17,41 @@
     <style media="screen">
       
     </style>
+
 </head>
 <body>
+    
+    </style>
     <link rel="stylesheet" href="./css/shoppingList.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <nav></nav>
+    
     <main>
+        <div class="header">
+  <h1>Header</h1>
+  <p id="nameUser">My supercool header</p>
+  <div class="logOut">
+    <button class="logOutBt"><i class="fa fa-user-times" onclick="signOut()"></i></button>
+</div>
+</div>
         <div class="all-shopping-lists">
-            <button id="addListBtn" onclick="addNewList()">הוסף רשימה</button>
+            
             <ul id="list-name-bar">
                 <li>list1</li>
                 <li>list1</li>
                 <li>list1</li>
 
             </ul>
+            <button id="addListBtn" onclick="addNewList()">הוסף רשימה</button>
         </div>
         <i class="fa-solid fa-plus" id="addListIcon" onclick="addNewList()"></i>
     <div class="container hide">
         <input type="text"  value="רשימה1" id="list-name" onfocusout="changeListName()">
         <div id="newtask">
-            <input class="new-task-input" type="text" placeholder="הוסף מוצר">
+            <input class="new-task-input" type="text" placeholder="הוסף מוצר" >
             <input class="new-task-count" type="number" value="1" min="1">
 
-            <button id="push">הוסף</button>
+            <button id="push" >הוסף </button>
         </div>
         <div class="shopping-item-header">
             <span class="item-name">שם המוצר
