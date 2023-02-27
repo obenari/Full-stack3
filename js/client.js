@@ -179,3 +179,7 @@ function addProductToWindow(name, count) {
             </div>
         `;
 }
+
+function signOut(){
+    //// do sign out
+}
