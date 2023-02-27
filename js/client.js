@@ -146,6 +146,8 @@ function changeListName() {
 }
 
 function selectList(name) {
+    if(!(currentUser.lists.find(x => x.name === name)))
+        return;
     document.querySelector(".container").classList.remove('hide');
     document.querySelector('#tasks').innerHTML = '';//remove the previous products
     currentList = currentUser.lists.find(x => x.name === name);
