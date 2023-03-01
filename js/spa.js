@@ -21,7 +21,8 @@ function poppin(ev){
     
     var oldNode=document.querySelector('.page')//.classList.remove('active');
     document.body.removeChild(oldNode)
-
+    if(oldNode.id==="shoping-list-page")
+        saveChanges();
     var newNode=document.getElementById(hash)//.classList.add('active');
     var clon = newNode.content.cloneNode(true);
     document.body.appendChild(clon);

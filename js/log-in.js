@@ -21,7 +21,7 @@ function validateUser(oldNode,newNode){
         document.cookie = `username=${userEmail};`;
         document.getElementById("wrong-input2").style.display='none';
         switchTemplate(oldNode,newNode);
-        loadListPage(user);
+       // loadListPage(user);
     }
     xhttp.OnLoad(loginValidation);
     xhttp.send();

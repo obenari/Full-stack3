@@ -193,3 +193,31 @@ function signOut(){
     }
     switchTemplate('shoping-list-page', 'log-in-template');
 }
+
+
+
+function saveChanges(){
+    if (currentUser instanceof User) {
+        let xhttp = new FXMLHttpRequest();
+        xhttp.Open('PUT', 'updateUser.json');
+        xhttp.send(JSON.stringify(currentUser));
+    }
+}
+
+
+function loadPage(){
+    userEmail=document.cookie.slice(9);//= `username=${userEmail};`;
+    let xhttp = new FXMLHttpRequest();
+    xhttp.Open('GET',`getUser/${userEmail}.json`);
+    function f(){
+        if(xhttp.status!=200){
+            return;
+        }
+        let userJson=xhttp.responseText;
+        let user=JSON.parse(userJson);
+        
+        loadListPage(user);
+    }
+    xhttp.OnLoad(f);
+    xhttp.send();
+}
