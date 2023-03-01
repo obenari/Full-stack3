@@ -1,6 +1,6 @@
-let currentList = new ShoppingList('list1');
-let currentUser = new User("heroot12@gmail.com", "herout", "12345", []);
-window.localStorage.clear();
+//let currentList = new ShoppingList('list1');
+//let currentUser = new User("heroot12@gmail.com", "herout", "12345", []);
+
 
 
 window.onbeforeunload = function () {
@@ -11,9 +11,7 @@ window.onbeforeunload = function () {
     }
 
 }
-
-
-document.querySelector('#push').onclick = function () {
+ function AddItem(){
     if (document.querySelector('#newtask input').value.length == 0) {
         alert("Please Enter a Task")
     } else {
@@ -52,7 +50,10 @@ document.querySelector('#push').onclick = function () {
             }
         }
     }
-}
+
+ }
+
+
 function onlyForDebug() {
     let xhttp = new FXMLHttpRequest();
     xhttp.Open('GET', `getUser/heroot12@gmail.com.json`);
@@ -67,7 +68,7 @@ function onlyForDebug() {
     xhttp.OnLoad(loginValidation);
     xhttp.send();
 }
-onlyForDebug();
+//onlyForDebug();
 function loadListPage(user) {
     currentUser = new User();
     currentUser = Object.assign(currentUser, user);
@@ -136,6 +137,10 @@ function changeListName() {
 
     let listNameBar = document.getElementById("list-name-bar");
     let newName = document.getElementById('list-name').value;
+    if(newName==''){
+        newName=new Date().toLocaleString();
+        document.getElementById('list-name').value=newName;
+    }
 
     for (let li of listNameBar.childNodes) {
         if (li.textContent === currentList.name)
@@ -181,5 +186,10 @@ function addProductToWindow(name, count) {
 }
 
 function signOut(){
-    //// do sign out
+    if (currentUser instanceof User) {
+        let xhttp = new FXMLHttpRequest();
+        xhttp.Open('PUT', 'updateUser.json');
+        xhttp.send(JSON.stringify(currentUser));
+    }
+    switchTemplate('shoping-list-page', 'log-in-template');
 }

@@ -14,7 +14,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
-    <title>Document</title>
+<!------------------------------->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!--Stylesheet-->
+    <style media="screen">
+      
+    </style>
+    <title>Shopping List App</title>
 </head>
 
 <body>
@@ -122,9 +135,68 @@
     </template>
     <template id="shoping-list-template">
         <div id="shoping-list-page" class="page" data-target="shoping-list-page">
-            <h1>jhgdfj</h1>
-            <button id="log-out-btn" onclick="switchTemplate('shoping-list-page', 'log-in-template')"
-                href="#log-in-template"> התנתק</button>
+        </style>
+        <link rel="stylesheet" href="./css/shoppingList.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+        
+        <main>
+            <div class="header">
+      
+      <div class="logOut">
+        <button class="logOutBt"><i class="fa fa-user-times" onClick="signOut()"></i></button>
+        
+    </div>
+    <div class=""nameDiv>
+    <h4 class="nameUser">name</h4>
+    </div>
+    </div>
+            <div class="all-shopping-lists">
+                
+                <ul id="list-name-bar">
+                    
+    
+                </ul>
+                <button id="addListBtn" onclick="addNewList()">הוסף רשימה</button>
+            </div>
+            <i class="fa-solid fa-plus" id="addListIcon" onclick="addNewList()"></i>
+        <div class="container hide">
+            <input type="text"  value="רשימה1" id="list-name" onfocusout="changeListName()">
+            <div id="newtask">
+                <input class="new-task-input" type="text" placeholder="הוסף מוצר" >
+                <input class="new-task-count" type="number" value="1" min="1">
+    
+                <button id="push"  onclick="AddItem()">הוסף </button>
+            </div>
+            <div class="shopping-item-header">
+                <span class="item-name">שם המוצר
+                </span>
+                <span class="item-count">כמות </span>
+                
+            </div>
+            <div id="wrapper">
+            <div id="tasks">
+                
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- <script src="./js/product.js"></script>
+    <script src="./js/User.js"></script>
+    <script src="./js/ShoppingList.js"></script>
+    <script src="./js/server.js"></script>
+        <script src="./js/db.js"></script>
+    <script src="./js/network.js"></script>
+    <script src="./js/fajax.js"></script>
+        <script src="./js/client.js"></script>
+    
+        
+        <script src="./js/log-in.js"></script>
+         -->
+        
+        <script src="https://kit.fontawesome.com/89b91e2a64.js" crossorigin="anonymous"></script>
+    
+            
         </div>
     </template>
     <script src="./js/spa.js"></script>
@@ -136,7 +208,7 @@
     <script src="./js/User.js"></script>
     <script src="./js/product.js"></script>
     <script src="./js/ShoppingList.js"></script>
-    <!-- <script src="./js/client.js"></script> -->
+    <script src="./js/client.js"></script> 
 
     <!-- <script src="./js/signUp.js"></script>
     <script src="./js/login.js"></script> -->

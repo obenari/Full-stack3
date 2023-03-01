@@ -157,7 +157,7 @@ button:hover {
 
 .wrap-login100 {
   width: 500px;
-  background: rgb(52, 162, 225);
+  background:  #7da4ab;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-family: 'Suez One', serif;
   border-radius: 10px;
@@ -331,7 +331,7 @@ button:hover {
 .login100-form-btn {
   font-family: 'Varela Round', sans-serif;
   font-size: 16px;
-  color: #fff;
+  color: #000000;
   line-height: 1.2;
   text-transform: uppercase;
 
