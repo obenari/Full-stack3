@@ -2,28 +2,6 @@
 
 
 
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-@font-face {
-  font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
-}
 
 
 
@@ -44,7 +22,7 @@ body, html {
 
 /*---------------------------------------------*/
 a {
-	font-family: Poppins-Regular;
+	font-family: 'Varela Round', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -61,7 +39,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #a64bf4;
+  color: #000000;
 }
 
 /*---------------------------------------------*/
@@ -70,7 +48,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Poppins-Regular;
+	font-family: 'Varela Round', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -108,10 +86,10 @@ textarea:focus:-moz-placeholder { color:transparent; }
 textarea:focus::-moz-placeholder { color:transparent; }
 textarea:focus:-ms-input-placeholder { color:transparent; }
 
-input::-webkit-input-placeholder { color: #adadad;}
-input:-moz-placeholder { color: #adadad;}
-input::-moz-placeholder { color: #adadad;}
-input:-ms-input-placeholder { color: #adadad;}
+input::-webkit-input-placeholder { color: #656565;}
+input:-moz-placeholder { color: #656565;}
+input::-moz-placeholder { color: #656565;}
+input:-ms-input-placeholder { color: #656565;}
 
 
 
@@ -133,14 +111,14 @@ button:hover {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Poppins-Regular;
+  font-family: 'Varela Round', sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #666666;
 }
 
 .txt2 {
-  font-family: Poppins-Regular;
+  font-family: 'Varela Round', sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #333333;
@@ -169,7 +147,7 @@ button:hover {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   padding: 15px;
   background-repeat: no-repeat;
@@ -179,7 +157,9 @@ button:hover {
 
 .wrap-login100 {
   width: 500px;
-  background: #fff;
+  background: rgb(52, 162, 225);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-family: 'Suez One', serif;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -190,11 +170,12 @@ button:hover {
 
 .login100-form {
   width: 100%;
+  font-family: 'Suez One', serif;
 }
 
 .login100-form-title {
   display: block;
-  font-family: Poppins-Bold;
+  font-family: 'Suez One', serif;
   font-size: 39px;
   color: #333333;
   line-height: 1.2;
@@ -209,21 +190,22 @@ button:hover {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 2px solid #000000;
+  
 }
 
 .label-input100 {
-  font-family: Poppins-Regular;
-  font-size: 14px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
   color: #333333;
   line-height: 1.5;
   padding-left: 7px;
 }
 
 .input100 {
-  font-family: Poppins-Medium;
+  font-family: 'Varela Round', sans-serif;
   font-size: 16px;
-  color: #333333;
+  color: #000000;
   line-height: 1.2;
 
   display: block;
@@ -248,7 +230,7 @@ button:hover {
 .focus-input100::after {
   content: attr(data-symbol);
   font-family: Material-Design-Iconic-Font;
-  color: #adadad;
+  color: #000000;
   font-size: 22px;
 
   display: -webkit-box;
@@ -274,7 +256,7 @@ button:hover {
   left: 0;
   width: 0;
   height: 2px;
-  background: #7f7f7f;
+  background: #000000;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -291,11 +273,11 @@ button:hover {
 }
 
 .input100:focus + .focus-input100::after {
-  color: #a64bf4;
+  color: #363637;
 }
 
 .has-val.input100 + .focus-input100::after {
-  color: #a64bf4;
+  color: #383738;
 }
 
 
@@ -320,11 +302,11 @@ button:hover {
   overflow: hidden;
   margin: 0 auto;
 
-  box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
-  -moz-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
-  -webkit-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
-  -o-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
-  -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  box-shadow: 0 5px 30px 0px rgba(213, 216, 216, 0.2);
+  -moz-box-shadow: 0 5px 30px 0px rgba(213, 216, 216, 0.2);
+  -webkit-box-shadow: 0 5px 30px 0px rgba(213, 216, 216, 0.2);
+  -o-box-shadow: 0 5px 30px 0px rgba(213, 216, 216, 0.2);
+  -ms-box-shadow: 0 5px 30px 0px rgba(213, 216, 216, 0.2);
 }
 
 .login100-form-bgbtn {
@@ -332,11 +314,11 @@ button:hover {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -o-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: #716c76;
+  background: -webkit-linear-gradient(right, #7d7f7f, #e1e0e1, #7d7f7f, #e6d394);
+  background: -o-linear-gradient(right, #7d7f7f, #e1e0e1, #7d7f7f, #e6d394);
+  background: -moz-linear-gradient(right, #7d7f7f, #e1e0e1, #7d7f7f, #e6d394);
+  background: linear-gradient(right, #7d7f7f, #e1e0e1, #7d7f7f, #e6d394);
   top: 0;
   left: -100%;
 
@@ -347,7 +329,7 @@ button:hover {
 }
 
 .login100-form-btn {
-  font-family: Poppins-Medium;
+  font-family: 'Varela Round', sans-serif;
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
@@ -394,7 +376,7 @@ button:hover {
   right: 2px;
   pointer-events: none;
 
-  font-family: Poppins-Regular;
+  font-family: 'Varela Round', sans-serif;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -411,7 +393,7 @@ button:hover {
 
 .alert-validate::after {
   content: "\f06a";
-  font-family: FontAwesome;
+  font-family: 'Varela Round', sans-serif;
   display: block;
   position: absolute;
   color: #c80000;
